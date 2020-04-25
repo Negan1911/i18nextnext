@@ -58,7 +58,7 @@ function App({ Component, pageProps }) {
 export default App
 ```
 
-3. Create a custom `pages/_document`, this will allow us to ship the translations
+4. Create a custom `pages/_document`, this will allow us to ship the translations
 namespaces with the payload received on the UI:
 
 ```diff
@@ -84,7 +84,7 @@ export default class AppDocument extends Document {
 }
 ```
 
-4. For preloading translastions, on your `page` file you should add:
+5. For preloading translastions, on your `page` file you should add:
 SSG:
 ```js
 import { LoadLocales } from 'i18nextnext'
@@ -117,21 +117,21 @@ export async function getServerSideProps() {
 
 ## API
 
-### <LocaleScript />:
+### `<LocaleScript />`:
 This will inject a payload on the initial response to the client, allowing i18n to
 not request the already-loaded namespaces.
 **This is meant to be used on a NextJS Document (`pages/_document`) only.**
 
 **Returns**: If `LoadLocales` was set, will return a `<script />` if not, null.
 
-### <NextNextProvider i18n={i18n} />:
+### `<NextNextProvider i18n={i18n} />`:
 Wrapper on top of `I18nextProvider`, it will initialize React-i18next with the pre-filled store from `<LocaleScript />` (if present).
 
 **Returns**: Received Children
 **Props**:
 - `i18n`: _Required, i18n_: i18n instance.
 
-### await LoadLocales(lng: string, namespaces: string[]):
+### `await LoadLocales(lng: string, namespaces: string[])`:
 Will pre-load namespaces onto the store, can be used multiple times to load
 multiple languages, should be used only on `getServerSideProps` or `getStaticProps`.
 
