@@ -2,23 +2,13 @@
   "name": "example",
   "version": "1.0.0",
   "main": "index.js",
+  "author": "Nahuel Veron",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "next"
   },
   "dependencies": {
-    "react-app-polyfill": "^1.0.0"
-  },
-  "alias": {
-    "react": "../node_modules/react",
-    "react-dom": "../node_modules/react-dom/profiling",
-    "scheduler/tracing": "../node_modules/scheduler/tracing-profiling"
-  },
-  "devDependencies": {
-    "@types/react": "^16.9.11",
-    "@types/react-dom": "^16.8.4",
-    "parcel": "^1.12.3",
-    "typescript": "^3.4.5"
+    "i18next-browser-languagedetector": "^4.1.1",
+    "next": "^9.3.5"
   }
 }
