@@ -1,16 +1,18 @@
-import * as React from 'react';
-import { i18n } from 'i18next';
-import { I18nextProvider, getI18n, setI18n } from 'react-i18next'
+import * as React from 'react'
+import {
+  getI18n,
+  setI18n,
+  I18nextProvider,
+  I18nextProviderProps,
+} from 'react-i18next'
 
-type LocalesProviderProps = { i18n: i18n, children: React.ReactElement }
-
-export function NextNextProvider({ children, i18n }: LocalesProviderProps) {
+export function NextNextProvider({ i18n, ...props }: I18nextProviderProps) {
   setI18n(i18n)
   if (globalThis.store) {
     i18n.services.resourceStore.data = globalThis.store
   }
 
-  return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
+  return <I18nextProvider i18n={i18n} {...props} />
 }
 
 export function LocaleScript() {
@@ -32,6 +34,6 @@ export async function LoadLocales(lng: string, namespaces: string[]) {
     throw new Error('i18n has not been set')
   }
 
-  await i18n.reloadResources(lng, namespaces);
+  await i18n.reloadResources(lng, namespaces)
   globalThis.store = i18n.services.resourceStore.data
 }

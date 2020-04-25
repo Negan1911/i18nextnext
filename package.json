@@ -18,7 +18,9 @@
     "prepare": "tsdx build"
   },
   "peerDependencies": {
-    "react": ">=16"
+    "i18next": "^19.4.3",
+    "react": ">=16",
+    "react-i18next": "^11.3.5"
   },
   "husky": {
     "hooks": {
@@ -27,7 +29,7 @@
   },
   "prettier": {
     "printWidth": 80,
-    "semi": true,
+    "semi": false,
     "singleQuote": true,
     "trailingComma": "es5"
   },
