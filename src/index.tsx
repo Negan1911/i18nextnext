@@ -6,7 +6,9 @@ import {
   I18nextProviderProps,
 } from 'react-i18next'
 
-export function NextNextProvider({ i18n, ...props }: I18nextProviderProps) {
+type ProviderProps = I18nextProviderProps & { children: React.ReactNode }
+
+export function NextNextProvider({ i18n, ...props }: ProviderProps) {
   setI18n(i18n)
   if (globalThis.store) {
     i18n.services.resourceStore.data = globalThis.store
