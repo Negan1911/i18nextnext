@@ -1,4 +1,5 @@
 import * as React from 'react'
+import invokeGlobalThis from 'globalthis'
 import {
   getI18n,
   setI18n,
@@ -6,6 +7,7 @@ import {
   I18nextProviderProps,
 } from 'react-i18next'
 
+const globalThis = invokeGlobalThis()
 type ProviderProps = I18nextProviderProps & { children: React.ReactNode }
 
 export function NextNextProvider({ i18n, ...props }: ProviderProps) {
