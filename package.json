@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -10,6 +10,11 @@
   "engines": {
     "node": ">=10"
   },
+  "bugs": {
+    "url": "https://github.com/Negan1911/i18nextnext/issues"
+  },
+  "homepage": "https://github.com/Negan1911/i18nextnext",
+  "repository": "https://github.com/Negan1911/i18nextnext",
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
